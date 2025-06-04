@@ -17,7 +17,7 @@ const About = () => {
         </button>
         <h1 className="text-lg font-semibold">Sobre</h1>
         <div className="ml-auto text-sm text-gray-500">
-          dd/mm/yyyy
+          {new Date().toLocaleDateString('pt-BR')}
         </div>
       </div>
 
@@ -28,7 +28,9 @@ const About = () => {
           <div className="space-y-1 text-gray-700">
             <div>Nicolas Torquato Simões Messias</div>
             <div>Pedro Henrique Oliveira Santos</div>
-            <div>Rafael Invêa Peretta</div>
+            <div>Rafael Inêas Peretta</div>
+            <div>Kayã Morgado de Lima</div>
+            <div>Luiz Guilherme Soares Luciano</div>
           </div>
         </div>
 
@@ -45,7 +47,7 @@ const About = () => {
           
           <div>
             <span className="font-medium">Período de Desenvolvimento:</span><br />
-            1 Semana
+            1 Mês
           </div>
         </div>
       </div>

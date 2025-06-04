@@ -7,6 +7,7 @@ import { generateRandomPiece, getColorForValue } from '../utils/pieceGenerator';
 import PieChartComponent from '../components/PieChart';
 import FilterButtons from '../components/FilterButtons';
 import PieceCard from '../components/PieceCard';
+import axios from 'axios';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -65,8 +66,18 @@ const Dashboard = () => {
     updateChartData();
   }, [pieces, activeFilter]);
 
-  const handleRefresh = () => {
+  // Buscar peças do backend
+  useEffect(() => {
+    axios.get('http://localhost:3001/pieces').then(res => setPieces(res.data));
+  }, []);
+
+  // Adicionar nova peça no backend
+  const handleRefresh = async () => {
     const newPiece = generateRandomPiece();
+    await axios.post('http://localhost:3001/pieces', {
+      ...newPiece,
+      timestamp: newPiece.timestamp.toISOString(),
+    });
     setPieces(prev => [newPiece, ...prev]);
   };
 
