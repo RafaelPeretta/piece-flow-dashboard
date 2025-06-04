@@ -1,17 +1,15 @@
 
 import { Piece } from '../types';
 
-const colors = ['Azul', 'Vermelho', 'Verde', 'Amarelo', 'Roxo', 'Laranja'];
+const colors = ['Vermelho', 'Verde', 'Amarelo', 'Azul'];
 const sizes = ['Pequeno', 'Médio', 'Grande'];
-const materials = ['Metal', 'Plástico', 'Madeira', 'Borracha'];
+const materials = ['Metal', 'Plástico'];
 
 const colorMap: { [key: string]: string } = {
   'Azul': '#3B82F6',
   'Vermelho': '#EF4444',
   'Verde': '#10B981',
-  'Amarelo': '#F59E0B',
-  'Roxo': '#8B5CF6',
-  'Laranja': '#F97316'
+  'Amarelo': '#F59E0B'
 };
 
 export const generateRandomPiece = (): Piece => {
@@ -29,7 +27,7 @@ export const getColorForValue = (value: string, filterType: string): string => {
     return colorMap[value] || '#6B7280';
   }
   
-  const colors = ['#3B82F6', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6', '#F97316'];
+  const colors = ['#3B82F6', '#EF4444', '#10B981', '#F59E0B'];
   const hash = value.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   return colors[hash % colors.length];
 };
