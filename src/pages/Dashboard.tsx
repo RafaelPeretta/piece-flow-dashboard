@@ -1,13 +1,12 @@
-
 import { useState, useEffect } from 'react';
 import { Settings, RefreshCw } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Piece, FilterType, ChartData } from '../types';
 import { generateRandomPiece, getColorForValue } from '../utils/pieceGenerator';
-import PieChartComponent from '../components/PieChart';
 import FilterButtons from '../components/FilterButtons';
 import PieceCard from '../components/PieceCard';
 import axios from 'axios';
+import LineChartComponent from '../components/LineChart';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -108,7 +107,7 @@ const Dashboard = () => {
           <h2 className="text-lg font-semibold mb-4 text-center">Distribuição de Partes</h2>
           
           {chartData.length > 0 ? (
-            <PieChartComponent data={chartData} />
+            <LineChartComponent data={chartData} />
           ) : (
             <div className="h-64 flex items-center justify-center text-gray-500">
               Carregando dados...
