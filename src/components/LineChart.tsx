@@ -25,6 +25,7 @@ const LineChartComponent = ({ data }: LineChartComponentProps) => {
           />
           <YAxis 
             tick={{ fontSize: 12 }}
+            allowDecimals={false}
           />
           <Tooltip 
             formatter={(value, name) => [value, 'Quantidade']}
