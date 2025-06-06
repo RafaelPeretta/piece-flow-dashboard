@@ -2,7 +2,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.lovable.39a299dc99dc4bcd97601310beebfeec',
+  appId: 'com.lovable.pieceflowdashboard',
   appName: 'piece-flow-dashboard',
   webDir: 'dist',
   server: {
